@@ -5,7 +5,7 @@ var passport = require("passport");
 var crypto = require("crypto");
 var routes = require("./routes");
 require("dotenv").config();
-const connection = connection.models.User;
+const connection = require("./config/database");
 
 //! package to store sessions into mongodb-database
 const MongoStore = require("connect-mongo")(session);
