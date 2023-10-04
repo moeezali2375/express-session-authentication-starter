@@ -9,7 +9,13 @@ const User = connection.models.User;
  */
 
 // TODO
-router.post("/login", passport.authenticate("local"), (req, res, next) => {});
+router.post(
+	"/login",
+	passport.authenticate("local", {
+		failureRedirect: "/login-failure",
+		successRedirect: "login-success",
+	}),
+);
 
 //! Passoport authenticate first validates the user then executes the (req,res) callback function
 router.post("/register", (req, res, next) => {
